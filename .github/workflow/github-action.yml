@@ -1,0 +1,28 @@
+name: Deploy
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: vps-6685e5fc.vps.ovh.net
+          username: root
+          key: -----BEGIN OPENSSH PRIVATE KEY-----
+              b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABBM022ZRv
+              RgjtmLU97+U4QKAAAAZAAAAAEAAAAzAAAAC3NzaC1lZDI1NTE5AAAAIDGKTM2s+mWWRKfD
+              mVFSgE2J5H+qYuTUwvzt/0EwT/CLAAAAkII2Sb1hyUjQ9Hc1NOJJ//DLfMwruPqKpS3w2J
+              33pS32ooSsJ93xXjXN3u5acbFBFDRqslhTSs9p35LeLQiX9RXdMZs5Po5XO+6TcobRDS4V
+              QKlqHGfkwgFXxX76LkhhFSknbSJUnClsNHZXeOWMSuGROgm491tgw76VFVcElUnlUgGx2M
+              diCeCLmRxpLGv18w==
+              -----END OPENSSH PRIVATE KEY-----
+          script: |
+            cd /var/www/portfolio
+            git pull origin main
+            npm install
+            npm run build
+            pm2 restart portfolio
