@@ -25,7 +25,7 @@ export const projects: Project[] = [
 Etant récemment diplomé, je souhaitais augmenter mon employabilité et acquérir de nouvelles compétences ! L'idée de realiser 
 un projet m'est alors apparu comme une évidence. Après voir fait des recherches, je me suis dit pourquoi pas ne pas 
 développer des scripts qui automatise la gestion des certificats d'une flotte de drône. Une authentique et réelle root of trust 
-développé from scratch, se rapprochant d'un cas concret.  
+développé from scratch.
 
 ## Fonctionnalités principales
 
@@ -55,7 +55,8 @@ drone-fleet-pki-lab/
 ├── docs/
 │   └── architecture.md
 ├── pki/
-│   ├── openssl.cnf
+│   ├── openssl-rootca.cnf
+│   ├── openssl-intermediate.cnf
 │   ├── ca/
 │   │   ├── certs/
 │   │   ├── crl/
@@ -65,7 +66,19 @@ drone-fleet-pki-lab/
 │   │   ├── serial
 │   │   └── crlnumber
 │   ├── csr/
-│   ├── issued/
+│   ├── intermediate/
+│   │   ├── certs/
+│   │   ├── crl/
+│   │   ├── newcerts/
+│   │   ├── private/
+│   │   ├── index.txt
+│   │   ├── serial
+│   │   └── crlnumber
+│   ├── endpoint/
+│   │   ├── certs/
+│   │   ├── crl/
+│   │   ├── newcerts/
+│   │   ├── private/
 │   └── scripts/
 │       ├── init_ca.sh
 │       ├── issue_cert.sh
@@ -88,22 +101,48 @@ Le dossier \`pki/\` contient toute la configuration OpenSSL et les scripts Bash 
 
 Le dossier \`simulator/\` contient un serveur GCS (Ground Control Station) et un client drone en Python. Ils communiquent via **mTLS** en utilisant les certificats générés par la PKI.
 
-## Quickstart
+## Choix de l'architecture 
 
-\`\`\`bash
-# Cloner le projet
-git clone https://github.com/Gabin-Crn/drone-fleet-pki-lab.git
-cd drone-fleet-pki-lab
+Mon choix s'est porté sur une architecture à 3 niveaux \`RootCa -> Intermediate -> Endpoints\` pour les raisons suivantes : 
 
-# Initialiser la PKI
-make init
+- Un Root CA offline (Minimisation du risque d'exposition sur certificat Root)
+- Si intermediate exposé, il suffit de le revoker et de générer un nouveau certificat. Toute la chaîne n'est pas compromise ! 
+- Segmentation possible : Dans le monde de l'embarqué, on retrouve majoritairement une intermediate CA par usage, elle ne se fait pas par usage protocolaire mais par région dans le monde ou 
+par type de véhicule
 
-# Émettre un certificat pour un drone
-make issue DRONE_ID=drone-01
-
-# Lancer le simulateur
-make simulate
+#### Par région : 
 \`\`\`
+RootCA 
+    ├── Manufacturing CA Europe
+    ├── Manufacturing CA Asie
+    └── Manufacturing CA Amérique
+\`\`\`
+
+#### Par type de véhicule : 
+\`\`\`
+RootCA
+    ├── Intermediate Produit A (voiture électrique)
+    ├── Intermediate Produit B (camion)
+    └── Intermediate Produit C (deux-roues)
+\`\`\`
+
+-> Etant donné que mon projet se porte sur la gestion d'une flotte de drône, le choix par région est le plus adapté. Cependant, pour des raisons de simplicité, nous nous concentrerons sur une 
+seule région. Néanmoins, il sera très facilement reproductible à une échelle plus importante
+
+## La révocation des certificats 
+
+La question de comment gérer la révocation de nos certifications est un axe primordiale dans le choix d'une architecture de PKI. 
+Pour rappeler, nous pilotons une flotte de drônes, il y a donc des contraintes à prendre en compte qui ne sont pas négligeable et qui seront déterministe dans notre choix ! 
+
+Listons les, puis analysons les et étudions les. 
+
+- Pas forcément un accès internet en continue
+- Des contraintes hardware (CPU - RAM - Stockage - ...)
+- Se déplacer de manière furtive
+
+Les deux 
+
+
 
 ## Ce que j'ai appris
 

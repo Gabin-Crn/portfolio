@@ -11,7 +11,7 @@ export default function Footer() {
               href="/"
               className="flex items-center gap-2 text-white font-bold text-lg mb-4"
             >
-              <Code2 className="w-5 h-5 text-indigo-400" />
+              <Code2 className="w-5 h-5 text-emerald-400" />
               Gabin Cornaire
             </Link>
                       </div>

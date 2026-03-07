@@ -23,9 +23,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link
             href="/"
-            className="flex items-center gap-2 text-lg font-bold text-gray-900 hover:text-indigo-600 transition-colors"
+            className="flex items-center gap-2 text-lg font-bold text-gray-900 hover:text-emerald-600 transition-colors"
           >
-            <Code2 className="w-6 h-6 text-indigo-600" />
+            <Code2 className="w-6 h-6 text-emerald-600" />
             <span>Gabin Cornaire</span>
           </Link>
 
@@ -36,7 +36,7 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   pathname === link.href
-                    ? "bg-indigo-50 text-indigo-600"
+                    ? "bg-emerald-50 text-emerald-600"
                     : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                 }`}
               >
@@ -65,7 +65,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   pathname === link.href
-                    ? "bg-indigo-50 text-indigo-600"
+                    ? "bg-emerald-50 text-emerald-600"
                     : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                 }`}
               >

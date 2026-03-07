@@ -28,7 +28,7 @@ export default function BlogPreview() {
           </div>
           <Link
             href="/blog"
-            className="hidden sm:flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-medium transition-colors"
+            className="hidden sm:flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
           >
             Tous les articles
             <ArrowRight className="w-4 h-4" />
@@ -70,7 +70,7 @@ export default function BlogPreview() {
                       {post.readTime}
                     </span>
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors line-clamp-2">
+                  <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors line-clamp-2">
                     {post.title}
                   </h3>
                   <p className="text-sm text-gray-500 line-clamp-2">
@@ -95,7 +95,7 @@ export default function BlogPreview() {
         <div className="sm:hidden mt-8 text-center">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
           >
             Tous les articles
             <ArrowRight className="w-4 h-4" />

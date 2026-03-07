@@ -57,7 +57,7 @@ export default async function ProjectPage({
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1.5 rounded-lg bg-indigo-50 text-indigo-600 text-sm font-medium"
+              className="px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-600 text-sm font-medium"
             >
               {tag}
             </span>
@@ -81,7 +81,7 @@ export default async function ProjectPage({
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white font-medium rounded-xl hover:bg-indigo-700 transition-colors text-sm"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 text-white font-medium rounded-xl hover:bg-emerald-700 transition-colors text-sm"
             >
               <ExternalLink className="w-4 h-4" />
               Démo live

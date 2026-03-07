@@ -52,7 +52,7 @@ export default function ProjectsPage() {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <h2 className="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                    <h2 className="text-xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">
                       {project.title}
                     </h2>
                     <span className="text-xs text-gray-400 font-medium">

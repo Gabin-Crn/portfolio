@@ -27,8 +27,8 @@ export default function Education() {
           {/* Education */}
           <div>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center">
-                <GraduationCap className="w-5 h-5 text-indigo-600" />
+              <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center">
+                <GraduationCap className="w-5 h-5 text-emerald-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900">Études</h3>
             </div>
@@ -43,12 +43,12 @@ export default function Education() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
-                  <div className="absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full bg-indigo-100 border-[3px] border-indigo-600" />
+                  <div className="absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full bg-emerald-100 border-[3px] border-emerald-600" />
                   <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
                     <h4 className="font-semibold text-gray-900 mb-1">
                       {edu.degree}
                     </h4>
-                    <p className="text-indigo-600 font-medium text-sm mb-2">
+                    <p className="text-emerald-600 font-medium text-sm mb-2">
                       {edu.school}
                     </p>
                     <div className="flex flex-wrap items-center gap-3 text-xs text-gray-500 mb-3">

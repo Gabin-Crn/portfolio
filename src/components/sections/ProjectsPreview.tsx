@@ -28,7 +28,7 @@ export default function ProjectsPreview() {
           </div>
           <Link
             href="/projets"
-            className="hidden sm:flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-medium transition-colors"
+            className="hidden sm:flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
           >
             Tous les projets
             <ArrowRight className="w-4 h-4" />
@@ -56,7 +56,7 @@ export default function ProjectsPreview() {
                   />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">
+                  <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-sm text-gray-500 mb-4 line-clamp-2">
@@ -100,7 +100,7 @@ export default function ProjectsPreview() {
         <div className="sm:hidden mt-8 text-center">
           <Link
             href="/projets"
-            className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
           >
             Tous les projets
             <ArrowRight className="w-4 h-4" />

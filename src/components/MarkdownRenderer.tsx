@@ -29,7 +29,7 @@ const components: Components = {
   ),
   li: ({ children }) => (
     <li className="text-gray-600 flex gap-2.5 items-start">
-      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-indigo-400 flex-shrink-0" />
+      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
       <span>{children}</span>
     </li>
   ),
@@ -41,13 +41,13 @@ const components: Components = {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-indigo-600 hover:text-indigo-700 underline underline-offset-2 decoration-indigo-300 hover:decoration-indigo-500 transition-colors"
+      className="text-emerald-600 hover:text-emerald-700 underline underline-offset-2 decoration-emerald-300 hover:decoration-emerald-500 transition-colors"
     >
       {children}
     </a>
   ),
   blockquote: ({ children }) => (
-    <blockquote className="border-l-4 border-indigo-400 bg-indigo-50/50 pl-4 py-3 pr-4 my-6 rounded-r-xl">
+    <blockquote className="border-l-4 border-emerald-400 bg-emerald-50/50 pl-4 py-3 pr-4 my-6 rounded-r-xl">
       {children}
     </blockquote>
   ),
@@ -69,7 +69,7 @@ const components: Components = {
       );
     }
     return (
-      <code className="text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded-md text-sm font-mono">
+      <code className="text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-md text-sm font-mono">
         {children}
       </code>
     );

@@ -54,7 +54,7 @@ export default async function BlogPostPage({
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1.5 rounded-lg bg-indigo-50 text-indigo-600 text-sm font-medium"
+              className="px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-600 text-sm font-medium"
             >
               {tag}
             </span>
@@ -70,7 +70,7 @@ export default async function BlogPostPage({
         <div className="flex items-center justify-between">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Tous les articles

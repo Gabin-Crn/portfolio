@@ -31,22 +31,22 @@ export default function Contact() {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <div className="flex items-center gap-4 p-5 rounded-xl bg-gray-50 border border-gray-100">
-            <div className="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
-              <Mail className="w-5 h-5 text-indigo-600" />
+            <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0">
+              <Mail className="w-5 h-5 text-emerald-600" />
             </div>
             <div>
               <p className="text-sm text-gray-500">Email</p>
               <a
                 href="mailto:gabincornaire@outlook.fr"
-                className="font-medium text-gray-900 hover:text-indigo-600 transition-colors"
+                className="font-medium text-gray-900 hover:text-emerald-600 transition-colors"
               >
                 gabincornaire@outlook.fr
               </a>
             </div>
           </div>
           <div className="flex items-center gap-4 p-5 rounded-xl bg-gray-50 border border-gray-100">
-            <div className="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
-              <MapPin className="w-5 h-5 text-indigo-600" />
+            <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0">
+              <MapPin className="w-5 h-5 text-emerald-600" />
             </div>
             <div>
               <p className="text-sm text-gray-500">Localisation</p>
@@ -75,7 +75,7 @@ export default function Contact() {
                 type="text"
                 id="name"
                 placeholder="Votre nom"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder:text-gray-400"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all placeholder:text-gray-400"
               />
             </div>
             <div>
@@ -89,7 +89,7 @@ export default function Contact() {
                 type="email"
                 id="email"
                 placeholder="votre@email.com"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder:text-gray-400"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all placeholder:text-gray-400"
               />
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function Contact() {
               type="text"
               id="subject"
               placeholder="Sujet de votre message"
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder:text-gray-400"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all placeholder:text-gray-400"
             />
           </div>
           <div className="mb-6">
@@ -118,12 +118,12 @@ export default function Contact() {
               id="message"
               rows={5}
               placeholder="Votre message..."
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all resize-none placeholder:text-gray-400"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all resize-none placeholder:text-gray-400"
             />
           </div>
           <button
             type="submit"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white font-medium rounded-xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-600/25 hover:shadow-xl hover:shadow-indigo-600/30"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white font-medium rounded-xl hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/25 hover:shadow-xl hover:shadow-emerald-600/30"
           >
             <Send className="w-4 h-4" />
             Envoyer le message
