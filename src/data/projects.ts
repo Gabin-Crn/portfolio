@@ -22,10 +22,9 @@ export const projects: Project[] = [
 
 ## Contexte
 
-Etant récemment diplomé, je souhaitais augmenter mon employabilité et acquérir de nouvelles compétences ! L'idée de realiser 
-un projet m'est alors apparu comme une évidence. Après voir fait des recherches, je me suis dit pourquoi pas ne pas 
-développer des scripts qui automatise la gestion des certificats d'une flotte de drône. Une authentique et réelle root of trust 
-développé from scratch.
+J’ai conçu un projet complet de PKI appliquée à une flotte de drones simulée pour reproduire un cas d’usage proche du terrain : chaque drone possède une identité cryptographique 
+(clé + certificat X.509), la station sol authentifie les équipements via mTLS, et la compromission d’un drone est gérée proprement via révocation et CRL. Objectif : 
+démontrer une chaîne de confiance réaliste, de l’autorité racine jusqu’aux certificats opérationnels, avec une approche orientée automatisation et exploitation.
 
 ## Fonctionnalités principales
 
@@ -126,7 +125,7 @@ RootCA
     └── Intermediate Produit C (deux-roues)
 \`\`\`
 
--> Etant donné que mon projet se porte sur la gestion d'une flotte de drône, le choix par région est le plus adapté. Cependant, pour des raisons de simplicité, nous nous concentrerons sur une 
+-  Etant donné que mon projet se porte sur la gestion d'une flotte de drône, le choix par région est le plus adapté. Cependant, pour des raisons de simplicité, nous nous concentrerons sur une 
 seule région. Néanmoins, il sera très facilement reproductible à une échelle plus importante
 
 ## La révocation des certificats 
@@ -134,13 +133,22 @@ seule région. Néanmoins, il sera très facilement reproductible à une échell
 La question de comment gérer la révocation de nos certifications est un axe primordiale dans le choix d'une architecture de PKI. 
 Pour rappeler, nous pilotons une flotte de drônes, il y a donc des contraintes à prendre en compte qui ne sont pas négligeable et qui seront déterministe dans notre choix ! 
 
-Listons les, puis analysons les et étudions les. 
+Listons les : 
 
-- Pas forcément un accès internet en continue
+- Pas nécessairement une connexion Internet continue
 - Des contraintes hardware (CPU - RAM - Stockage - ...)
 - Se déplacer de manière furtive
+- Flotte très importante : davantage de certificats à révoquer, donc une CRL potentiellement volumineuse.
 
-Les deux 
+Il existe deux grandes méthode de révocation, via CRL (Certficat Revocation List) ou OCSP (Online Certificat Status Protocol). En prenant en compte les contraintes précédente,
+celle que nous avons retenu est via CRL. 
+
+
+
+### CRL (Certificat Revocation List)
+
+
+### Filtre de Bloom
 
 
 
@@ -149,7 +157,6 @@ Les deux
 - Conception d'une **infrastructure PKI hiérarchique** from scratch
 - Gestion du cycle de vie des certificats X.509 (émission, renouvellement, révocation)
 - Implémentation de **mTLS** pour l'authentification mutuelle
-- Automatisation complète avec **Makefile** + scripts Bash
 - Simulation de communications sécurisées entre systèmes embarqués
 `,
     tags: ["PKI", "X.509", "TLS", "OpenSSL", "Python", "Sécurité", "Drones"],
